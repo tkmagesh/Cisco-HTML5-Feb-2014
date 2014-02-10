@@ -1,0 +1,28 @@
+- Cache the resources of the application in the browser and they are served from the cache
+- Best fit for RIA based applications
+
+Manifest File
+	- catalog of all the resources that need to be cached/not cached
+	- defines the cache strategy for the application
+
+Structure of the Manifest file
+
+--------------------------------
+CACHE MANIFEST
+# comments can go here
+
+CACHE:
+#all the resources to be cached are listed here
+
+NETWORK:
+#all the resources that SHOULD NOT be cached are listed here
+#typically contains '*'
+
+FALLBACK:
+#list the offline alternatives for online resources
+#eg., 'online resouce' 'offline alternative'
+-----------------------------------------
+
+<html manifest="app.manifest">
+
+

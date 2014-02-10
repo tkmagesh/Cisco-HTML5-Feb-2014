@@ -1,0 +1,14 @@
+.completed {
+	font-style: italic;
+	text-decoration: line-through;
+	color : red;
+	font-weight: bold;
+}
+
+#ulTaskList > li{
+	cursor: pointer;
+}
+
+#divAppNewVersionMessage{
+	display : none;
+}
