@@ -1,0 +1,19 @@
+Session Storage
+==============
+
+Same as that of the LocalStorage except the lifetime of the data.  The data will be destroyed once the browser is shutdown.
+
+window.sessionStorage
+	- key/value store
+	- key & value should be of type "string"
+
+Attributes & Methods
+	- undefined setItem(key,value)
+	- value getItem(key)
+	- undefined removeItem(key)
+	- number length
+	- undefined clear()
+	- key key(number)
+
+Events
+	-window.onstorage
