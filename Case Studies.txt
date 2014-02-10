@@ -1,0 +1,20 @@
+Case Study - 1
+
+To build a task manager with the following use cases
+	a. should be able to add a task
+	b. should be able to mark/unmark a task as completed
+	c. should be able to remove completed tasks
+
+	infrastructure
+	a. the task information should be maintained in the client-side
+	b. the task manager should be accessible even when the user is offline
+		b.1 removal of the completed tasks should not be allowed when offline
+		b.2 UI should reveal if the application is online or offline
+	c. add/removing tasks should be notified to other users in realtime
+	d. provision for exporting the tasks to a file should be given
+
+Case Study - 2
+
+Build web page that can find the number of prime numbers between a given range. 
+	The UI should be responsive during the processing.
+	The user should be notified about the progress.

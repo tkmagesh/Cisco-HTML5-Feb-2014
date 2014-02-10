@@ -1,0 +1,40 @@
+Installation
+============
+Offline Application Cache
+
+Data Storage
+============
+Local Storage
+Session Storage
+Indexed Db
+Web SQL (o)
+
+Real Time Updates
+=================
+Server Sent Events
+Web Sockets
+
+Multi threading
+===============
+Web Workers
+
+Native Media
+============
+Audio Element
+Video Element
+
+Other Infrastructure
+====================
+File System API
+History API
+Drag & Drop API
+
+Mobile Devices Support
+=======================
+New Input Types
+Geo Locations API
+
+Draft
+======
+Web RTC
+Vibration API
