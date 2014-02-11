@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Prime Finder</title>
+
+	<script>
+	window.addEventListener("DOMContentLoaded",init);
+	var worker;
+	function init(){
+		document.getElementById("btnFindPrimeCount").addEventListener("click",onBtnFindPrimeCountClick);
+		worker = new Worker("PrimeFinderWorker.js");
+		worker.addEventListener("message",onMsgReceivedFromWorker);
+		printInstructions();
+	}
+
+	function onMsgReceivedFromWorker(msgArg){
+		var data = msgArg.data;
+		updateProgress(data.percentCompleted,data.primeCount);
+	}
+
+	function printInstructions(){
+		displayMessage("1. Find the number of prime numbers between the start and the end");
+		displayMessage("2. Make sure the browser is responsive while it is finding the prime numbers");
+		displayMessage("3. Report the progress while the finding operation is being carried out..");
+		displayMessage("(Hint : refer to the 'BrowserThreadingModelDemo.html' for ideas)");
+	}
+	function onBtnFindPrimeCountClick(){
+		var start = parseInt(document.getElementById("txtStart").value);
+		var end = parseInt(document.getElementById("txtEnd").value);
+		document.getElementById("primeFindProgress").value=0;
+		var msgData = {
+			type : "findPrimes",
+			start : start,
+			end : end
+		};
+		worker.postMessage(msgData);
+
+	}
+	function updateProgress(progressPercent,primeCount){
+		document.getElementById("primeFindProgress").value = progressPercent;
+		displayPrimeCount(primeCount);
+	}
+	
+	function displayMessage(msg){
+		document.getElementById("divMessage").innerHTML += msg + "<br/>";
+	}
+	function displayPrimeCount(count){
+		document.getElementById("primeCount").innerText = count;
+	}
+	
+
+
+	</script>
+</head>
+<body>
+	<span>Start :</span>
+	<input type="text" name="" id="txtStart">
+	<span>End :</span>
+	<input type="text" name="" id="txtEnd">
+	<input type="button" value="Find Prime Count" id="btnFindPrimeCount">
+	<br>
+	<progress id="primeFindProgress" value="0" min="0" max="100"></progress>
+	<span id="primeCount"></span>
+	<div id="divMessage"></div>
+</body>
+</html>
